@@ -1,11 +1,11 @@
-# Statistical inference of differential RNA editing sites from RNA-sequencing data using beta-binomial models
+# Statistical inference of differential RNA editing sites from RNA-sequencing data 
 
 ## Description
-This repository holds two functions in R to run beta-binomial tests for calling differential RNA editing sites:
+This repository holds two functions in R to run REDITs (RNA editing tests) for calling differential RNA editing sites:
 1. RNA editing sites that are significantly different between case-control (or condition1 vs condition2) cohorts
-   - Handled by the beta-binomial log likelihood test
+   - Handled by the REDIT-LLR (RNA editing test - log likelihood ratio)
 2. RNA editing sites that significantly correlate with categorical (e.g. sex, gender) and/or quantitative (expression of ADAR, age) variables
-   - Handled by beta-binomial regression
+   - Handled by REDIT-Regression (RNA editing test - regression)
 
 These tests consider both variance in editing from biological variance and intrinsic inaccuracy from calculating editing from count data such as RNA-seq. Thus they wield greater power and lower false positives, at and below the 5% false positive threshold, than commonly used alterantives such as the t-test, Wilcoxon's rank-sum test, or pooled Fisher's Exact test.
 
@@ -34,12 +34,12 @@ If you want to use the below example code with parallelization, then you will ne
 But the actual beta-binomial tests, which alone are quite fast, do not use these packages. Nor do they need parallelization, unless you plan on running on a dataset with millions of editing sites.
 
 ## Usage
-## Beta-binomial log likelihood test
+## REDIT-LLR
 ```
 source("beta_binomial_log_likelihood_test.R")
 ```
 ### Function documentation
-**beta_binomial_log_likelihood_test**(*data*, *groups*)
+**REDIT_LLR**(*data*, *groups*)
 
 *data*: a 2xn numeric matrix. The first row holds the number of counts (e.g. RNA-seq reads) supporting editing. The second row holds the number of counts supporting non-editing. Each column corresponds to data from one sample.
 
@@ -92,12 +92,12 @@ $log.likelihood.for.null
 $p.value
 [1] 0.003851092
 ```
-## Beta-binomial regression
+## REDIT-Regression
 ```
 source("beta_binomial_regression.R")
 ```
 ### Function documentation
-**beta_binomial_regression**(*data*, *covariates*, *covariates_to_get_p_values*)
+**REDIT_regression**(*data*, *covariates*, *covariates_to_get_p_values*)
 
 *data*: a 2xn numeric matrix. The first row holds the number of counts (e.g. RNA-seq reads) supporting editing. The second row holds the number of counts supporting non-editing. Each column corresponds to data from one sample.
 
