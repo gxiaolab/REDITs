@@ -142,7 +142,7 @@ get_maximum_likelihood_beta_binomial_regression_linear_mapping = function(data,c
 
 
 #main function to run beta-binomial regression
-beta_binomial_regression = function(data,covariates=data.frame(),covariates_to_get_p_values=c()){
+REDIT_regression = function(data,covariates=data.frame(),covariates_to_get_p_values=c()){
 	#data is 2xn matrix of n samples. first row are number of G reads. Second row are number of A reads
 	#coviarates is n x k   matrix of k coviarates for n samples. The sample order must correspond with the data argument. The colnames will be the names of the covariates that this method will test are all significant. If user omits this argument, then assumed to run beta binomial regression without any covariates
 	#covariates_to_get_p_values: vector of names of the covariates from which you want to get p values for. If omitted then algorith will find p values for all covariates in the covariate matrix

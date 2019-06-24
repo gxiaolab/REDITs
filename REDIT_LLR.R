@@ -87,7 +87,7 @@ split_data_by_group = function(data,groups){
 }
 
 #the actual function for running the beta binomial log likelihood test
-beta_binomial_log_likelihood_test = function(data,groups){
+REDIT_LLR = function(data,groups){
 	validate_input_data(data,groups)
 	split_data = split_data_by_group(data,groups)
 	data1 = split_data$data1                                                                                               
