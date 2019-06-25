@@ -116,7 +116,7 @@ The actual names of the list elements will vary based on the colnames in the *co
 >source("REDIT_regression.R")
 > the_data = matrix(c(0,1,2,10,10,10,10,9,8,0,0,0),nrow=2,byrow=TRUE) 
 >the_covariates = data.frame( age=c(1,1,1,8,8,8), sex=c("unknown",'M','F','M','F','M'))
->REDIT_regression(data=the_data, covariates=the_covariates, covariates_to_get_p_values=c('age','sex')) #you can omit the covariates_to_get_p_values argument
+>REDIT_regression(data=the_data, covariates=the_covariates)
 >>
 $parameter_estimates
           age         sex.M   sex.unknown     intercept         sigma 
