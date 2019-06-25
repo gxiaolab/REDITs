@@ -96,13 +96,11 @@ $p.value
 source("REDIT_regression.R")
 ```
 ### Function documentation
-**REDIT_regression**(*data*, *covariates*, *covariates_to_get_p_values*)
+**REDIT_regression**(*data*, *covariates*)
 
 *data*: a 2xn numeric matrix. The first row holds the number of counts (e.g. RNA-seq reads) supporting editing. The second row holds the number of counts supporting non-editing. Each column corresponds to data from one sample.
 
 *covariates*: a dataframe where each column holds a categorical (chacter/factor) variable or quantitative (numeric, integer) variable. Each row corresponds 1 to 1 with each respective column in the 2xn data matrix.
-
-*covariates_to_get_p_values*: a character vector specifying for which variables to get p-values. The strings must exactly match to colnames from the covariates dataframe. If you omit this argument, then the function will calculate p values for all variables. Note that all variables in the covariates dataframe will be included in the regression regardless if the covariates_to_get_p_values argument is used or not.
 
 *Returns* a list
 - *parameter_estimates*: the maximum likelihood estimates of all regression terms
