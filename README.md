@@ -24,18 +24,18 @@ This work is from: <link to publication to be added>
 ## Installation
 **You only need base** [R](https://www.r-project.org)
 
-Both beta-binomial tests use the optim function from the stats package which is a base package that is automatically included and loaded in R.
+Both tests in REDITs use the optim function from the stats package which is a base package that is automatically included and loaded in R.
 
 If you want to use the below example code with parallelization, then you will need to install 
 1. doParallel
 2. foreach 
 
-But the actual beta-binomial tests, which alone are quite fast, do not use these packages. Nor do they need parallelization, unless you plan on running on a dataset with millions of editing sites.
+But the actual tests in REDITs, which alone are quite fast, do not use these packages. Nor do they need parallelization, unless you plan on running on a dataset with millions of editing sites.
 
 ## Usage
 ## REDIT-LLR
 ```
-source("beta_binomial_log_likelihood_test.R")
+source("REDIT_LLR.R")
 ```
 ### Function documentation
 **REDIT_LLR**(*data*, *groups*)
