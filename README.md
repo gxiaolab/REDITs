@@ -57,7 +57,7 @@ The actual names of the list elements will vary based on the two unique strings 
 >source("REDIT_LLR.R")
 >the_data = matrix( c(1,9, 2,9, 8,1,10,0),nrow=2)
 >the_groups = c('disease','disease','control','control');
->beta_binomial_log_likelihood_test(data=the_data, groups=the_groups)
+>REDIT_LLR(data=the_data, groups=the_groups)
 >> 
 $data
      [,1] [,2] [,3] [,4]
