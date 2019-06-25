@@ -54,7 +54,7 @@ The actual names of the list elements will vary based on the two unique strings 
 
 ### Code example 
 ```
->source("beta_binomial_log_likelihood_test.R")
+>source("REDIT_LLR.R")
 >the_data = matrix( c(1,9, 2,9, 8,1,10,0),nrow=2)
 >the_groups = c('disease','disease','control','control');
 >beta_binomial_log_likelihood_test(data=the_data, groups=the_groups)
@@ -93,7 +93,7 @@ $p.value
 ```
 ## REDIT-Regression
 ```
-source("beta_binomial_regression.R")
+source("REDIT_regression.R")
 ```
 ### Function documentation
 **REDIT_regression**(*data*, *covariates*, *covariates_to_get_p_values*)
@@ -115,13 +115,13 @@ The actual names of the list elements will vary based on the colnames in the *co
 
 ### Code example
 ```
->source("beta_binomial_regression.R")
+>source("REDIT_regression.R")
 >the_data = matrix( c(1,9, 2,9, 8,1,10,0),nrow=2)
 >the_groups = c('disease','disease','control','control');
->beta_binomial_log_likelihood_test(data=the_data, groups=the_groups)
+>REDIT_regression(data=the_data, groups=the_groups)
 > the_data = matrix(c(0,1,2,10,10,10,10,9,8,0,0,0),nrow=2,byrow=TRUE) 
 >the_covariates = data.frame( age=c(1,1,1,8,8,8), sex=c("unknown",'M','F','M','F','M'))
->beta_binomial_regression(data=the_data, covariates=the_covariates, covariates_to_get_p_values=c('age','sex')) #you can omit the covariates_to_get_p_values argument
+>REDIT_regression(data=the_data, covariates=the_covariates, covariates_to_get_p_values=c('age','sex')) #you can omit the covariates_to_get_p_values argument
 >>
 $parameter_estimates
           age         sex.M   sex.unknown     intercept         sigma 
@@ -152,7 +152,7 @@ to run the below example code
 ```
 >library(doParallel)
 >library(foreach)
->source("beta_binomial_regression.R")
+>source("REDIT_regression.R")
 
 #initiate a cluster
 >noCores = detectCores() -1
@@ -171,8 +171,8 @@ to run the below example code
 >output_matrix = foreach(i=1:number_of_editing_sites_to_test,.combine='rbind') %dopar%{
   G_reads_of_editing_site = G_reads[i,]
   A_reads_of_editing_site = A_reads[i,]
-  bb_regression_info = beta_binomial_regression(data=rbind(G_reads_of_editing_site,A_reads_of_editing_site), covariates=the_covariates)
-  return( as.matrix( data.frame(p_value_age= bb_regression_info$age.p.value )) )
+  regression_info = REDIT_regression(data=rbind(G_reads_of_editing_site,A_reads_of_editing_site), covariates=the_covariates)
+  return( as.matrix( data.frame(p_value_age= regression_info$age.p.value )) )
 }
 >output_matrix
 >>
