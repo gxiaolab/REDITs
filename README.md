@@ -13,13 +13,13 @@ These tests consider both variance in editing from biological variance and intri
 This work is from: <link to publication to be added>
 
 ## Table of Contents
-1. [Installation](https://github.com/gxiaolab/REDITs/edit/master/README.md#installation)
-2. [Usage](https://github.com/gxiaolab/REDITs/edit/master/README.md#usage)
-   - [REDIT-LLR](https://github.com/gxiaolab/REDITs/edit/master/README.md#redit-llr)
-   - [REDIT-Regression](https://github.com/gxiaolab/REDITs/edit/master/README.md#redit-regression)
-   - [Parallelization](https://github.com/gxiaolab/REDITs/edit/master/README.md#example-of-running-redits-with-parallelization)
-3. [Credits](https://github.com/gxiaolab/REDITs/edit/master/README.md#credits)
-4. [License](https://github.com/gxiaolab/REDITs/edit/master/README.md#license)
+1. [Installation](https://github.com/gxiaolab/REDITs/blob/master/README.md#installation)
+2. [Usage](https://github.com/gxiaolab/REDITs/blob/master/README.md#usage)
+   - [REDIT-LLR](https://github.com/gxiaolab/REDITs/blob/master/README.md#redit-llr)
+   - [REDIT-Regression](https://github.com/gxiaolab/REDITs/blob/master/README.md#redit-regression)
+   - [Parallelization](https://github.com/gxiaolab/REDITs/blob/master/README.md#example-of-running-redits-with-parallelization)
+3. [Credits](https://github.com/gxiaolab/REDITs/blob/master/README.md#credits)
+4. [License](https://github.com/gxiaolab/REDITs/blob/master/README.md#license)
 
 ## Installation
 **You only need base** [R](https://www.r-project.org)
