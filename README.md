@@ -15,8 +15,8 @@ This work is from: <link to publication to be added>
 ## Table of Contents
 1. [Installation](https://github.com/gxiaolab/REDITs/edit/master/README.md#installation)
 2. [Usage](https://github.com/gxiaolab/REDITs/edit/master/README.md#usage)
-   - [Beta binomial log likelihood](https://github.com/gxiaolab/REDITs/edit/master/README.md#redit-llr)
-   - [Beta binomial regression](https://github.com/gxiaolab/REDITs/edit/master/README.md#redit-regression)
+   - [REDIT-LLR](https://github.com/gxiaolab/REDITs/edit/master/README.md#redit-llr)
+   - [REDIT-Regression](https://github.com/gxiaolab/REDITs/edit/master/README.md#redit-regression)
    - [Parallelization](https://github.com/gxiaolab/REDITs/edit/master/README.md#example-of-running-redits-with-parallelization)
 3. [Credits](https://github.com/gxiaolab/REDITs/edit/master/README.md#credits)
 4. [License](https://github.com/gxiaolab/REDITs/edit/master/README.md#license)
