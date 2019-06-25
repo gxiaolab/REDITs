@@ -15,9 +15,9 @@ This work is from: <link to publication to be added>
 ## Table of Contents
 1. [Installation](https://github.com/gxiaolab/REDITs/edit/master/README.md#installation)
 2. [Usage](https://github.com/gxiaolab/REDITs/edit/master/README.md#usage)
-   - [Beta binomial log likelihood](https://github.com/gxiaolab/REDITs/edit/master/README.md#beta-binomial-log-likelihood-test)
-   - [Beta binomial regression](https://github.com/gxiaolab/REDITs/edit/master/README.md#beta-binomial-regression)
-   - [Parallelization](https://github.com/gxiaolab/REDITs/edit/master/README.md#example-of-running-beta-binomial-tests-with-parallelization)
+   - [Beta binomial log likelihood](https://github.com/gxiaolab/REDITs/edit/master/README.md#redit-llr)
+   - [Beta binomial regression](https://github.com/gxiaolab/REDITs/edit/master/README.md#redit-regression)
+   - [Parallelization](https://github.com/gxiaolab/REDITs/edit/master/README.md#example-of-running-redits-with-parallelization)
 3. [Credits](https://github.com/gxiaolab/REDITs/edit/master/README.md#credits)
 4. [License](https://github.com/gxiaolab/REDITs/edit/master/README.md#license)
 
@@ -140,7 +140,7 @@ $sex.unknown.p.value
 [1] 0.6962553
 ```
 
-## Example of running beta-binomial tests with parallelization
+## Example of running REDITs with parallelization
 Parallelization doesn't actually use any code implemented by us. You are free to use any packages suitable for parallelization. We provide below an example using doParallel and foreach
 
 You need to install 
