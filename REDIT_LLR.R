@@ -86,7 +86,7 @@ split_data_by_group = function(data,groups){
 	return(list(data1=data1,data2=data2,group1 = group1,group2=group2))
 }
 
-#the actual function for running the beta binomial log likelihood test
+#the actual function for running the REDIT-LLR
 REDIT_LLR = function(data,groups){
 	validate_input_data(data,groups)
 	split_data = split_data_by_group(data,groups)

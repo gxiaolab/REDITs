@@ -1,7 +1,7 @@
 #Holds functions to run REDIT-Regression
 
 #function to validate user input data
-validate_input_data = function(data,covariates,covariates_to_get_p_values){
+validate_input_data = function(data,covariates){
 	#make sure no data is NA
 	if(any(is.na(data))){ #try with data= matrix(c(NA,2,3,4),nrow=2)
 		stop("data cannot have NA values. You can probably substitute zero for missing (NA) values")
@@ -35,9 +35,6 @@ validate_input_data = function(data,covariates,covariates_to_get_p_values){
 	#make sure each column in covariates is either integer, numeric, factor, or character
 	if(any(! sapply(covariates,class) %in% c('integer','numeric','factor','character'))){
 		stop("each covariates in covariates data.frame must be of type integer, numeric, factor, or character")	
-	}
-	if(any(! covariates_to_get_p_values %in% names(covariates))){
-		stop("values in covariates_to_get_p_values must correspond to colnames in covariates")
 	}
 }
 
@@ -141,19 +138,16 @@ get_maximum_likelihood_beta_binomial_regression_linear_mapping = function(data,c
 }
 
 
-#main function to run beta-binomial regression
-REDIT_regression = function(data,covariates=data.frame(),covariates_to_get_p_values=c()){
+#main function to run REDIT_regression
+REDIT_regression = function(data,covariates=data.frame()){
 	#data is 2xn matrix of n samples. first row are number of G reads. Second row are number of A reads
-	#coviarates is n x k   matrix of k coviarates for n samples. The sample order must correspond with the data argument. The colnames will be the names of the covariates that this method will test are all significant. If user omits this argument, then assumed to run beta binomial regression without any covariates
-	#covariates_to_get_p_values: vector of names of the covariates from which you want to get p values for. If omitted then algorith will find p values for all covariates in the covariate matrix
-	validate_input_data(data,covariates,covariates_to_get_p_values)
+	#coviarates is n x k   matrix of k coviarates for n samples. The sample order must correspond with the data argument. The colnames will be the names of the covariates that this method will test are all significant. 
+	validate_input_data(data,covariates)
 	covariates = convert_categorical_variables_into_dummy(covariates)
 	full_model = get_maximum_likelihood_beta_binomial_regression_linear_mapping(data,covariates)
 	covariate_names = colnames(covariates)
-	if(length(covariates_to_get_p_values) == 0){ #then get all covariates
-		covariates_to_get_p_values = covariate_names
-	}
-	#determine the p value of each covariate desired
+	covariates_to_get_p_values = covariate_names
+	#determine the p value of each covariate
 	output_object = list()
 	output_object[['parameter_estimates']] = full_model$parameters_estimates
 	output_object[['converged']] = full_model$converged
