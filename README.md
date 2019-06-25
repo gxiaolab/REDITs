@@ -108,7 +108,7 @@ source("REDIT_regression.R")
 - *parameter_estimates*: the maximum likelihood estimates of all regression terms
 - *converged*: 0 if maximum likelihood converged. 1 if not. We found that statistical inference is generally robust to whether or not maximum likelihood converged.
 - *age.p.value*: p-value of the effect of age on editing
-- *sex.M.p.value and sex.unknown.p.value*: p-value of the effect of sex on editing. Note that the beta_binomial_regression function automatically converts categorical variables into dummy representations.
+- *sex.M.p.value and sex.unknown.p.value*: p-value of the effect of sex on editing. Note that the REDIT_regression function automatically converts categorical variables into dummy representations.
 
 The actual names of the list elements will vary based on the colnames in the *covariates* parameter.
 
