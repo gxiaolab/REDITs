@@ -13,13 +13,13 @@ These tests consider both variance in editing from biological variance and intri
 This work is from: <link to publication to be added>
 
 ## Table of Contents
-1. [Installation](https://github.com/tranStephen/beta_binomial_tests/blob/master/README.md#installation)
-2. [Usage](https://github.com/tranStephen/beta_binomial_tests/blob/master/README.md#usage)
-   - [Beta binomial log likelihood](https://github.com/tranStephen/beta_binomial_tests/blob/master/README.md#beta-binomial-log-likelihood-test)
-   - [Beta binomial regression](https://github.com/tranStephen/beta_binomial_tests/blob/master/README.md#beta-binomial-regression)
-   - [Parallelization](https://github.com/tranStephen/beta_binomial_tests/blob/master/README.md#example-of-running-beta-binomial-tests-with-parallelization)
-3. [Credits](https://github.com/tranStephen/beta_binomial_tests/blob/master/README.md#credits)
-4. [License](https://github.com/tranStephen/beta_binomial_tests/blob/master/README.md#license)
+1. [Installation](https://github.com/gxiaolab/REDITs/edit/master/README.md#installation)
+2. [Usage](https://github.com/gxiaolab/REDITs/edit/master/README.md#usage)
+   - [Beta binomial log likelihood](https://github.com/gxiaolab/REDITs/edit/master/README.md#beta-binomial-log-likelihood-test)
+   - [Beta binomial regression](https://github.com/gxiaolab/REDITs/edit/master/README.md#beta-binomial-regression)
+   - [Parallelization](https://github.com/gxiaolab/REDITs/edit/master/README.md#example-of-running-beta-binomial-tests-with-parallelization)
+3. [Credits](https://github.com/gxiaolab/REDITs/edit/master/README.md#credits)
+4. [License](https://github.com/gxiaolab/REDITs/edit/master/README.md#license)
 
 ## Installation
 **You only need base** [R](https://www.r-project.org)
