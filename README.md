@@ -137,7 +137,7 @@ $sex.unknown.p.value
 ```
 
 ## Multiple-testing correction
-If running REDIT-LLR or REDIT-Regression on multiple editing sites, it is standard to apply multi-hypothesis testing correction to mitigate the false-discovery rate of editing sites "significantly associated" with the condition of interest, such as age or disease. We demonstrate, using 3 made-up editing sites, how to perform multiple-testing corrrection using either the Benjamini-Hochberg method or the more stringent Bonferroni correction. Performing multi-testing correction is highly recommended for all users.
+If running REDIT-LLR or REDIT-Regression on multiple editing sites, it is standard to apply multiple-hypothesis testing correction to mitigate the false-discovery rate of editing sites associated with the condition of interest, such as age or disease. We demonstrate, using 3 made-up editing sites, how to perform multiple-testing corrrection using either the Benjamini-Hochberg method or the more stringent Bonferroni correction. Performing multiple-testing correction is highly recommended.
 ```
 >source("REDIT_LLR.R")
 #here we make up 3 editing sites
