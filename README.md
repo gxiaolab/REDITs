@@ -136,17 +136,35 @@ $sex.unknown.p.value
 ```
 
 ## Multiple-testing correction
-If running REDIT-LLR or REDIT-Regression on multiple editing sites, it is standard to apply multi-hypothesis testing correction to mitigate the false-discovery rate of editing sites "significantly associated" with the condition of interest, such as age or disease. We demonstrate how to perform multiple testing corrrection using either the Benjamini-Hochberg method or the more stringent Bonferroni correction.
+If running REDIT-LLR or REDIT-Regression on multiple editing sites, it is standard to apply multi-hypothesis testing correction to mitigate the false-discovery rate of editing sites "significantly associated" with the condition of interest, such as age or disease. We demonstrate, using 3 made-up editing sites, how to perform multiple-testing corrrection using either the Benjamini-Hochberg method or the more stringent Bonferroni correction. Performing multi-testing correction is highly recommended for all users.
 ```
 >source("REDIT_LLR.R")
+#here we make up 3 editing sites
 >editing_site1_data = matrix( c(1,9, 2,9, 8,1,10,0),nrow=2)
->editing_site2_data = matrix( c(2,20, 3,20, 4,19,5,19),nrow=2)
->editing_site3_data = matrix( c(1,9, 2,9, 8,1,10,0),nrow=2)
+>editing_site2_data = matrix( c(2,20, 3,20, 4,15,5,15),nrow=2)
+>editing_site3_data = matrix( c(1,6, 1,7, 3,2,4,2),nrow=2)
+>the_groups = c('disease','disease','control','control')
 
->the_groups = c('disease','disease','control','control');
+#getting nominal p-values without multiple-testing correction
 >p_value1 = REDIT_LLR(data=editing_site1_data, groups=the_groups)$p.value
 >p_value2 = REDIT_LLR(data=editing_site2_data, groups=the_groups)$p.value
-adjusted_p_values = p.adjust( c(p_value1,p_value2), method='BH')
+>p_value3 = REDIT_LLR(data=editing_site3_data, groups=the_groups)$p.value
+>nominal_p_values = c(p_value1,p_value2,p_value3)
+>nominal_p_values
+>>
+[1] 0.003851092 0.339012828 0.04127514
+
+#getting adjusted p-values using the benjamini-hochberg procedure
+>adjusted_p_values = p.adjust( nominal_p_values, method='BH')
+>adjusted_p_values
+>>
+[1] 0.01155328 0.33901283 0.06191271
+
+#getting adjusted p-values using the stringent bonferroni procedure
+>adjusted_p_values = p.adjust( nominal_p_values, method='bonferroni')
+>adjusted_p_values
+>>
+[1] 0.01155328 1.00000000 0.12382542
 ```
 
 ## Example of running REDITs with parallelization
