@@ -135,6 +135,20 @@ $sex.unknown.p.value
 [1] 0.6962553
 ```
 
+## Multiple-testing correction
+If running REDIT-LLR or REDIT-Regression on multiple editing sites, it is standard to apply multi-hypothesis testing correction to mitigate the false-discovery rate of editing sites "significantly associated" with the condition of interest, such as age or disease. We demonstrate how to perform multiple testing corrrection using either the Benjamini-Hochberg method or the more stringent Bonferroni correction.
+```
+>source("REDIT_LLR.R")
+>editing_site1_data = matrix( c(1,9, 2,9, 8,1,10,0),nrow=2)
+>editing_site2_data = matrix( c(2,20, 3,20, 4,19,5,19),nrow=2)
+>editing_site3_data = matrix( c(1,9, 2,9, 8,1,10,0),nrow=2)
+
+>the_groups = c('disease','disease','control','control');
+>p_value1 = REDIT_LLR(data=editing_site1_data, groups=the_groups)$p.value
+>p_value2 = REDIT_LLR(data=editing_site2_data, groups=the_groups)$p.value
+adjusted_p_values = p.adjust( c(p_value1,p_value2), method='BH')
+```
+
 ## Example of running REDITs with parallelization
 Parallelization doesn't actually use any code implemented by us. You are free to use any packages suitable for parallelization. We provide below an example using doParallel and foreach
 
@@ -177,6 +191,7 @@ to run the below example code
 
 >stopCluster(cl) #to stop using the cluster you created
 ```
+
 ## Credits
 [Grace Xiao webpage](https://www.ibp.ucla.edu/research/xiao/Home.html)
 
