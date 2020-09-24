@@ -10,7 +10,7 @@ This repository holds two functions in R to run REDITs (RNA editing tests) for c
 These tests consider both variance in editing from biological variance and intrinsic inaccuracy from calculating editing from count data such as RNA-seq. Thus they wield greater power and lower false positives, at and below the 5% false positive threshold, than commonly used alterantives such as the t-test, Wilcoxon's rank-sum test, or pooled Fisher's Exact test.
 
 ## Related publication
-This work is from: (link to publication to be added)
+This work is from: [Statistical inference of differential RNA-editing sites from RNA-sequencing data by hierarchical modeling](https://academic.oup.com/bioinformatics/article/36/9/2796/5719018)
 
 ## Table of Contents
 1. [Installation](https://github.com/gxiaolab/REDITs/blob/master/README.md#installation)
